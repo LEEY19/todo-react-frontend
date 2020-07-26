@@ -3,16 +3,23 @@ import {
   AppBar,
   Toolbar,
   Typography,
+  Button,
+  Grid
 } from '@material-ui/core';
+import AddIcon from '@material-ui/icons/Add';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   toolbar: {
-    textAlign: "center",
-    height: 80
+    height: 80,
   },
   heading: {
-    margin: "auto"
+
+  },
+  button: {
+    // margin: theme.spacing(1),
+    backgroundColor: "#21b6ae",
+    color: "white"
   }
 });
 
@@ -20,8 +27,25 @@ const Header = () => {
   const classes = useStyles();
   return (
     <AppBar position="static">
-      <Toolbar className={classes.toolbar}>
-        <Typography className={classes.heading} variant="h5" align="center">Todo App</Typography>
+      <Toolbar>
+        <Grid
+          container
+          direction="row"
+          justify="space-between"
+          alignItems="center"
+        > 
+          <Typography variant="h6" className={classes.heading}>
+            Products
+          </Typography>
+          <Button
+            variant="contained"
+            // color="secondary"
+            className={classes.button}
+            startIcon={<AddIcon />}
+          >
+            Add
+          </Button>
+        </Grid>  
       </Toolbar>
     </AppBar>
   )

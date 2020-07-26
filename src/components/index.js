@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Header from './header';
+import Form from './form';
 
 const useStyles = makeStyles({
   root: {
@@ -14,6 +15,7 @@ function Product() {
   return (
     <div className={classes.root}>
       <Header />
+      <Form />
     </div>
   )
 }
