@@ -1,10 +1,15 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  useHistory
+} from "react-router-dom";
 import { 
   AppBar,
   Toolbar,
   Typography,
   Button,
-  Grid
+  Grid,
+  Link
 } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 import { makeStyles } from '@material-ui/core/styles';
@@ -24,6 +29,12 @@ const useStyles = makeStyles({
 });
 
 const Header = () => {
+  let history = useHistory();
+
+  const handleClick = (route) => {
+    history.push(route);
+  }
+
   const classes = useStyles();
   return (
     <AppBar position="static">
@@ -35,11 +46,13 @@ const Header = () => {
           alignItems="center"
         > 
           <Typography variant="h6" className={classes.heading}>
-            Products
+            <Link underline="none" onClick={() => handleClick("/")} color="white">
+              Products
+            </Link>
           </Typography>
           <Button
             variant="contained"
-            // color="secondary"
+            onClick={() => handleClick("/add")}
             className={classes.button}
             startIcon={<AddIcon />}
           >

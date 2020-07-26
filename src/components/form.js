@@ -60,7 +60,6 @@ const Form = () => {
             className={classes.switch}
             control={
               <Switch
-                name="checkedB"
                 color="primary"
                 checked={state.featured}
                 onChange={onSwitchClick}
