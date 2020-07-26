@@ -8,6 +8,7 @@ import {
 import { makeStyles } from '@material-ui/core/styles';
 import Header from './header';
 import Form from './form';
+import ProductList from './list';
 import { 
   AppBar,
   Toolbar,
@@ -34,6 +35,9 @@ function Product() {
         <Switch>
           <Route path='/add' exact={true}>
             <Form />
+          </Route>
+          <Route path='/' exact={true}>
+            <ProductList />
           </Route>
         </Switch>
       </Router>
