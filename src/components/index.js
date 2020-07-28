@@ -8,6 +8,7 @@ import {
 import { makeStyles } from '@material-ui/core/styles';
 import Header from './header';
 import Form from './form';
+import ProductList from './list';
 import { 
   AppBar,
   Toolbar,
@@ -24,7 +25,7 @@ const useStyles = makeStyles({
   }
 });
 
-function Product() {
+function App() {
   const classes = useStyles();
 
   return (
@@ -35,10 +36,13 @@ function Product() {
           <Route path='/add' exact={true}>
             <Form />
           </Route>
+          <Route path='/' exact={true}>
+            <ProductList />
+          </Route>
         </Switch>
       </Router>
     </div>
   )
 }
 
-export default Product;
+export default App;
