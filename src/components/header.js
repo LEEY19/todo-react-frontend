@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import {
   BrowserRouter as Router,
   useHistory
@@ -13,6 +14,7 @@ import {
 } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 import { makeStyles } from '@material-ui/core/styles';
+import * as ProductActions from '../store/actions/index';
 
 const useStyles = makeStyles({
   toolbar: {
@@ -28,10 +30,11 @@ const useStyles = makeStyles({
   }
 });
 
-const Header = () => {
+const Header = (props) => {
   let history = useHistory();
 
   const handleClick = (route) => {
+    props.addProduct();
     history.push(route);
   }
 
@@ -64,4 +67,10 @@ const Header = () => {
   )
 }
 
-export default Header;
+const mapDispatchToProps = dispatch => {
+  return {
+    addProduct: () => dispatch(ProductActions.addProduct()),
+  }
+};
+
+export default connect(null, mapDispatchToProps)(Header);

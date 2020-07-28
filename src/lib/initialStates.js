@@ -1,3 +1,6 @@
 export const products = {
-  products: []
+  productList: [],
+  editedProduct: {},
+  editingProduct: false,
+  patchSuccess: false
 };

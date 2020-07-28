@@ -25,7 +25,7 @@ const useStyles = makeStyles({
   }
 });
 
-function Product() {
+function App() {
   const classes = useStyles();
 
   return (
@@ -45,4 +45,4 @@ function Product() {
   )
 }
 
-export default Product;
+export default App;
