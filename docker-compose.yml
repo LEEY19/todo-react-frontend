@@ -4,7 +4,6 @@ services:
 
   todo-frontend:
     container_name: todo-frontend
-    image: react-todo-fe
     build:
       context: .
       dockerfile: Dockerfile
