@@ -3,7 +3,7 @@ import axios from 'axios'
 export default class API {
   static client() {
     return axios.create({
-      baseURL: 'http://localhost:8000/api/',
+      baseURL: 'http://0.0.0.0:8000/api/',
       headers: {
         'Content-Type': 'application/json',
       }
