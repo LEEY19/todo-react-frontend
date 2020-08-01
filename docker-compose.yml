@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+
+  todo-frontend:
+    container_name: todo-frontend
+    image: react-todo-fe
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - "3000:3000"
+    tty: true
